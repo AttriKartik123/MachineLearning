@@ -7,18 +7,18 @@ class Raman:
 
 
 class Harleen(Raman):
-    def __init__(self, pencil):
-        super().__init__(pen)   # Passing value to superclass constructor
+    def __init__(self, pen, pencil):
+        super().__init__(pen)   # Pass pen to Raman
         self.pencil = pencil
 
     def use(self):
-        super().__init__(self, pencil)
+        super().use()
         print("Pencil:", self.pencil)
 
 
 class Karan(Harleen):
     def __init__(self, pen, pencil, eraser):
-        super().__init__(pen, pencil)   # Passing values upward
+        super().__init__(pen, pencil)   # Pass pen & pencil upward
         self.eraser = eraser
 
     def use(self):
