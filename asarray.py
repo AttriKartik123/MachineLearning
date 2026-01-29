@@ -16,3 +16,5 @@ print(arr)
 lis = [[1,2],[8,9],[5,7]]
 arr2=np.asarray(lis)
 print(arr2)
+
+
