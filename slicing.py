@@ -31,7 +31,7 @@ print ('The items in the second row are:')
 print(a[1, ...])
 print ('\n')
 
-
 # In order to slice all items from column 1 onwards
 print ('The items onwards to column 1 are:' )
 print (a[..., 1:])
+
