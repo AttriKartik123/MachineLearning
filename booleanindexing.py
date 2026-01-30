@@ -8,3 +8,5 @@ print(x)
 # Now we will print the items greater than 11
 print("The items greater than 11 are:")
 print(x[x>11])
+
+
