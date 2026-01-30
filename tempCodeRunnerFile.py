@@ -1,10 +1,8 @@
 import numpy as np
-x = np.array([[11, 51, 2],[23, 24, 5], [16, 47, 8] ,[91, 10, 11]])
 
-print("The array is:")
-print(x)
+a = np.array([1,2,3,4])
+b = np.array([2,7,8,9])
+c = a+b
+print(c)
 
 
-# Now we will print the items greater than 11
-print("The items greater than 11 are:")
-print(x[x>11])
