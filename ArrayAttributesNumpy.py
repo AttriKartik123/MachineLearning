@@ -13,4 +13,8 @@ print("x3 ndim: ", x3.ndim)
 print("x3 shape:", x3.shape)
 print("x3 size: ", x3.size)
 
-print(x3)
+
+#ITEMSIZE
+print("itemsize:", x3.itemsize, "bytes")
+print("nbytes:", x3.nbytes, "bytes")
+
