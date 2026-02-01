@@ -18,7 +18,6 @@ c = a+b
 print(c)
 
 
-
 errro:ValueError                                Traceback (most recent call last)
 <ipython-input-3-a634d462e7c0> in <cell line: 5>()
       3 a = np.array([4,5,6,7])
@@ -42,5 +41,5 @@ print("\n The array a is :")
 print(a)
 
 print("\n After addition of array a and b resultant array is:")
-c = a + b;
+c = a + b
 print(c)
