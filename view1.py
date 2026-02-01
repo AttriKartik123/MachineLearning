@@ -24,3 +24,8 @@ print(id(a), id(b), id(c))   # object ids
 print(a.base)               # None (original)    -> here none means independent array 
 print(b.base)               # points to a
 print(c.base)               # None (independent)
+
+
+
+
+print("SAME MEMORY PROOF:", np.shares_memory(a,b))
