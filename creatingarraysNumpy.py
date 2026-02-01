@@ -3,13 +3,12 @@ identity= np.identity(5)
 print(identity)
 
 # All 1s matrix
-second = np.ones((4,3,2), dtype='int32')
+second = np.ones((4,3,2), dtype='int32')  #-> 4 matrix of 3 rows and 2 columns 
 print(second)
 
 # Any other number
 print(np.full((2,2), 99))
 
-import numpy as np
 
 a = np.zeros((2,2))   # Create an array of all zeros
 print(a)              # Prints "[[ 0.  0.]
