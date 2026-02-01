@@ -12,6 +12,7 @@ print("\nSum of all elements:", a.sum())
 print("Minimum value:", a.min())
 
 # 3️ Maximum value along axis=0 (column-wise)
+print("Maximum value along axis=1:", a.max(axis=1))
 print("Maximum value along axis=0:", a.max(axis=0))
 
 # 4️ Cumulative sum along axis=0 (column-wise running total)
