@@ -1,16 +1,12 @@
-import numpy as np
-np.random.seed(0)  # seed for reproducibility   -> gives same output everytym 
+import pandas as pd 
 
-x1 = np.random.randint(10, size=6)  # One-dimensional array
-x2 = np.random.randint(10, size=(3, 4))  # Two-dimensional array
-x3 = np.random.randint(10, size=(3, 4, 5))  # Three-dimensional array
+d= {
+    'Name' :pd.Series(['karan', 'Harleen', 'Iman'] , index = [1,2,3]) ,
+    'Age' :pd.Series([21,21,21] ) ,
+    'Salary' :pd.Series([20000 , 21000 , 20500] , index = [1,2,3] ) ,
 
-print("\n",x1)
-print("\n",x2)
-print("\n",x3)
 
-print("x3 ndim: ", x3.ndim)
-print("x3 shape:", x3.shape)
-print("x3 size: ", x3.size)
+}
 
-print(x3)
+df=pd.DataFrame(d)
+print(df)
