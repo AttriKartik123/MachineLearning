@@ -20,3 +20,8 @@ print(df)
 pd.set_option('display.max_columns',None)
 pd.set_option('display.max_rows',None)
 print(df)
+
+
+#setoptions     - customised head columns to see 
+pd.set_option('display.max_columns', 4)
+print(df.head())
