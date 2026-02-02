@@ -48,5 +48,14 @@ print(df["empid"])
 #getting two columns
 print(df[["Ename", "empid"]])
 
+
+#UNDERSTANDING SHAPE 
 print('\n')
 print(df[["Ename" , "empid"]].shape)
+
+#.SET OPTIONS      -------------->>>>> display.max_columns
+# .SET OPTIONS -------------->>>>> display.max_columns and display.max_rows
+print('\n')
+pd.set_option('display.max_columns', 2)
+pd.set_option('display.max_rows', 5)
+print(df)
