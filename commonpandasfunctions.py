@@ -48,5 +48,10 @@ print(df["empid"])
 #getting two columns
 print(df[["Ename", "empid"]])
 
+
+#UNDERSTANDING SHAPE 
 print('\n')
 print(df[["Ename" , "empid"]].shape)
+
+#.SET OPTIONS
+
