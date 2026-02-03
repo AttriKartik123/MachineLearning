@@ -44,3 +44,5 @@ print(result)
 
 #
 print(df1.value_counts(df1["Gender"]=='Female'))
+
+
