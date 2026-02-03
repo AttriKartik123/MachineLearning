@@ -34,3 +34,15 @@ print(maxx)
 print('\n')
 top_student = df1[df1["Percentage"] == maxx][["Name", "Percentage"]]
 print(top_student)
+
+
+
+
+#now printing one having minimum percentage
+print('\n')
+avg_student = df1["Percentage"].min()
+print(avg_student)
+
+print('\n')
+below_avg = df1[df1["Percentage"] == avg_student] [["Name" , "Percentage"]]
+print(below_avg)
