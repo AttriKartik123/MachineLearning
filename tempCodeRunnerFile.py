@@ -30,6 +30,36 @@ print(d)
 print('\n')
 print(d[["Name","Gender"]])
 
+#ADDING A RECORD USING LOC
 print('\n')
 df1.loc[9]=[ "DhruvJaggi" , 55 , "Custom" , 33,444,66,33,56]
 print(df1)
+
+
+#storing it in a variable 
+ser_gender = df1["Gender"]
+print('\n')
+print(ser_gender)
+
+
+#getting the data-> printing those who only have female gnder 
+ser_result = df1[df1["Gender"] == "Female"]
+print('\n')
+print(ser_result)
+
+#Getting those whose marks are above 88 
+print('\n')
+ser_result1 = df1[df1["Maths"] > 88]
+print(ser_result1)
+
+
+#getting those records whose marks are exact 89 and 444 in MAths
+print('\n')
+ser_result2= df1[ (df1["Maths"] == 88) | (df1["Maths"]==444 )]
+print(ser_result2)
+
+
+#getting two columns at once
+print('\n')
+ser_result3 = df1[["Name", "Hindi"]]
+print(ser_result3)
