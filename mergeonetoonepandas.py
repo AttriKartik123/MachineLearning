@@ -28,7 +28,7 @@ df1=pd.DataFrame(
 )
 print(df1)
 
-
+#it will merge only of PAWAN becoz pawan is in both dataframes df and df1
 
 print('\n')
 merged= df.merge(df1, left_on='Ename' , right_on='Name')
