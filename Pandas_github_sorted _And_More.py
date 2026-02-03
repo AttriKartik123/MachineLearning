@@ -10,9 +10,16 @@ df=pd.DataFrame(d)
 print(df)
 
 #sorting values -> sorting it by deartment numebr 
+print('\n')
 df_sorted = df.sort_values(by='Deptno')
 print(df_sorted)
 
 #sorting job by descending values
+print('\n')
 df_sortedJob = df.sort_values(by='Job' , ascending=False)
 print(df_sortedJob)
+
+#SORTING VALUES  BY DEPARTNMENT NUMBER AND ENAME
+print('\n')
+df_sorting= df.sort_values(by=['Ename',"Deptno"])
+print(df_sorting)
