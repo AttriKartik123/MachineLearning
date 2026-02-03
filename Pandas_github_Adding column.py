@@ -52,3 +52,9 @@ print(below_avg)
 
 
 # printing those students whose marks are not equals to 88.0
+result= df1[df1["Percentage"] != 88.0]
+print('\n')
+print(result)
+
+
+

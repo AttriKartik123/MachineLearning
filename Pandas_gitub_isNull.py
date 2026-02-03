@@ -34,7 +34,7 @@ result2 = df1[(df1["Percentage"] == 66.0) & (df1["Percentage"] == 88.0)]
 print("\nRows with Percentage 66 and 88:")
 print(result2)
 
-#  NOT IN condition using ~isin()
+#  NOT IN condition using ~isin()    ----> Gives those lines whose percentages is in 66 or 88
 result3 = df1[~df1["Percentage"].isin([66.0, 88.0])]
 print("\nRows whose Percentage is NOT 66 or 88:")
 print(result3)
