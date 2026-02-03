@@ -30,6 +30,7 @@ print(d)
 print('\n')
 print(d[["Name","Gender"]])
 
+#ADDING A RECORD USING LOC
 print('\n')
 df1.loc[9]=[ "DhruvJaggi" , 55 , "Custom" , 33,444,66,33,56]
 print(df1)
