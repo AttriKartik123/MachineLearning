@@ -10,10 +10,12 @@ d={'empid':pd.Series([1001,1002,1003,1004,1005,1006,1007,1008,1009,1010],index=[
 df=pd.DataFrame(d)
 print(df)
 
+print('\n')
 df['Zeros'] = np.zeros(len(df))
 print(df)
 
 
 #REMOVING COLUMN
+print('\n')
 df.drop('Zeros',axis=1,inplace=True)
 print(df)
