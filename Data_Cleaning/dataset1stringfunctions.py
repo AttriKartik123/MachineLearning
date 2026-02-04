@@ -40,4 +40,5 @@ print(df['lastname'])
 #storing it in df1 variable
 print('\n')
 df1 = df
-print(df1.columns)
+
+
