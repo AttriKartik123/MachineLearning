@@ -79,4 +79,6 @@ print(df.head())
 print('\n')
 
 
-print(df.salary())
+print(df.salary)
+
+
