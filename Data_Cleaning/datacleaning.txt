@@ -1,0 +1,151 @@
+Data Cleaning in Machine Learning
+What is Data Cleaning?
+Data cleaning is the process of identifying and correcting errors, inconsistencies, and inaccuracies in a dataset. It involves handling missing values, removing duplicates, correcting wrong data, and standardizing formats to ensure high-quality input for Machine Learning (ML) models. Clean data improves model accuracy, efficiency, and reliability.
+
+Why is Data Cleaning Important in Machine Learning?
+Improves Accuracy: Clean data leads to better predictions and results.
+
+Reduces Bias & Errors: Eliminates inconsistencies that can mislead models.
+
+Enhances Model Performance: High-quality data speeds up training and improves generalization.
+
+Ensures Consistency: Standardized data prevents unexpected behavior in models.
+
+Saves Time & Resources: Clean data reduces debugging and retraining efforts.
+
+Data Cleaning Techniques in Machine Learning 
+Handling Missing Values
+Removing Duplicates
+Handling Outliers
+Standardizing Data
+Encoding Categorical Data
+Note: Please check this tutorial for Pandas Functions for Data Cleaning
+
+1. Handling Missing Values
+Handling missing values is essential in data cleaning to ensure data consistency and improve model performance. Here are key approaches:
+
+1. Removing Missing Values
+If a dataset contains only a few missing values, removing those rows may be a viable option.
+If a column has a large proportion of missing values and is not critical, it can be dropped entirely.
+2. Imputation Techniques
+Constant Value Imputation: Missing values are replaced with a fixed value such as zero or "Unknown."
+Statistical Imputation: Common methods include filling missing values with the mean, median, or mode of the column.
+Forward/Backward Fill: Missing values are filled using the previous or next available value in sequential data.
+3. Predictive Imputation
+Machine learning models can predict missing values based on other available features in the dataset.
+4. Marking Missing Data
+Instead of filling or removing missing values, a separate indicator variable is created to denote missing entries, helping models recognize patterns in missingness.
+5. Interpolation
+In numerical and time-series data, missing values are estimated based on surrounding data points using linear or polynomial interpolation.
+The choice of technique depends on the nature of the data, the percentage of missing values, and the impact on analysis or model accuracy.
+
+Example Dataset (Before Cleaning)
+
+ID	Age	Salary
+1	25	50000
+2	30	NULL
+3	NULL	60000
+4	40	80000
+Example (Python - Handling Missing Values)
+
+import pandas as pd
+
+data = {'Age': [25, 30, None, 40], 'Salary': [50000, None, 60000, 80000]}
+df = pd.DataFrame(data)
+df.fillna(df.mean(), inplace=True)  # Replace missing values with column mean
+print(df)
+Example Dataset (After Cleaning)
+
+ID	Age	Salary
+1	25	50000
+2	30	63333
+3	31.67	60000
+4	40	80000
+2. Removing Duplicates in Data Cleaning
+Duplicate records in a dataset can lead to misleading insights and inaccurate model predictions. Removing them ensures data integrity and efficiency.
+
+Types of Duplicates
+Exact Duplicates – Identical rows repeated in the dataset.
+Partial Duplicates – Rows with similar values in some columns but differences in others.
+Near Duplicates – Slightly varied entries due to typos, different formats, or inconsistent data entry.
+Approaches to Removing Duplicates
+Identifying Duplicates – Analyzing the dataset to detect repeated values based on all or specific columns.
+Removing Exact Duplicates – Deleting rows that are completely identical.
+Handling Partial Duplicates – Keeping one occurrence while deciding which records to retain based on additional criteria (e.g., latest timestamp, highest value, etc.).
+Standardizing Data – Cleaning inconsistencies in text formatting, spaces, and case sensitivity before identifying duplicates.
+Resolving Near Duplicates – Using fuzzy matching techniques or domain-specific logic to merge or correct similar but not identical records.
+Choosing the right method depends on the data structure, business requirements, and the level of acceptable data loss.
+
+3. Handling Outliers in Data Cleaning
+Outliers are extreme values that deviate significantly from the rest of the data. They can distort statistical analyses and impact machine learning models.
+
+Identifying Outliers
+Visual Methods
+
+Boxplots: Show extreme values as points outside the whiskers.
+Scatterplots: Identify anomalies in relationships between variables.
+Histograms: Reveal skewness and unusual peaks in distribution.
+Statistical Methods
+
+Z-score: Measures how far a data point is from the mean in standard deviations.
+Interquartile Range (IQR): Defines outliers as values beyond 1.5 times the IQR.
+Handling Outliers
+Removing Outliers – If an outlier is due to an error or irrelevant to analysis, it can be removed.
+Transforming Data – Logarithmic, square root, or power transformations can reduce the impact of outliers.
+Winsorizing – Capping extreme values by replacing them with a predefined threshold (e.g., 5th and 95th percentiles).
+Binning – Grouping continuous values into categories to minimize the effect of outliers.
+Using Robust Models – Some machine learning models, such as decision trees, are less sensitive to outliers.
+The best approach depends on the context, whether outliers represent valuable insights or need to be managed to improve data reliability.
+
+4. Standardizing Data in Data Cleaning
+Standardization ensures that data is consistent, comparable, and suitable for analysis or machine learning models. It transforms data into a uniform format, reducing inconsistencies caused by scale differences.
+
+Why Standardization is Important?
+Ensures Uniformity – Brings different units or measurement scales to a common format.
+Improves Model Performance – Some algorithms (e.g., regression, SVM, k-means) perform better with standardized data.
+Enhances Interpretability – Makes it easier to compare and analyze different features.
+Methods of Standardization
+Z-Score Standardization (Standard Scaling)
+
+Converts data to have a mean of 0 and a standard deviation of 1.
+Useful when data follows a normal distribution.
+Min-Max Scaling (Normalization)
+
+Rescales data to a fixed range (typically 0 to 1).
+Suitable for algorithms that require bounded values like neural networks.
+Mean Normalization
+
+Adjusts values relative to their mean, making them centered around zero.
+Decimal Scaling
+
+Moves the decimal point based on the highest absolute value to bring data within a standard range.
+5. Encoding Categorical Data in Data Cleaning
+Categorical data consists of labels or categories that need to be converted into numerical values for machine learning models to process them effectively.
+
+Why Encoding is Important?
+Machine learning models work with numerical data, making encoding necessary.
+Ensures categorical variables are represented in a meaningful way.
+Prevents biases in models due to improper handling of categories.
+Types of Encoding Methods
+Label Encoding
+
+Assigns a unique numerical value to each category (e.g., "Red" → 0, "Blue" → 1, "Green" → 2).
+Suitable for ordinal data where order matters (e.g., "Low", "Medium", "High").
+May introduce an unintended relationship between values in non-ordinal data.
+One-Hot Encoding
+
+Creates separate binary columns for each category (e.g., "Red" → [1,0,0], "Blue" → [0,1,0]).
+Prevents numerical relationships between categories.
+Increases dataset size when there are many unique categories.
+Ordinal Encoding
+
+Assigns ordered numerical values based on category ranking (e.g., "Poor" → 1, "Average" → 2, "Good" → 3).
+Works best for ordinal data where order is meaningful.
+Frequency Encoding
+
+Replaces categories with their frequency of occurrence in the dataset.
+Useful for handling high-cardinality categorical features.
+Target Encoding (Mean Encoding)
+
+Replaces categories with the mean of the target variable for that category.
+Commonly used in predictive modeling but may lead to data leakage.
