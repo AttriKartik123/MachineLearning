@@ -49,3 +49,7 @@ print(regex)
 ### Select A Group of Column Names
 print('\n')
 print(df.columns.values[1:4])
+
+print('\n')
+print(df.columns[0:4])
+
