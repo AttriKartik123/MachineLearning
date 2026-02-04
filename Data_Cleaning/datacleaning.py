@@ -24,3 +24,10 @@ print(df.columns.__contains__('First Name'))
 ## Check to see if column names are duplicated
 print("\n")
 print(df.columns.duplicated())
+
+
+### Attributes and Methods of Str
+print('\n')
+strMethods = dir(df.columns.str)
+print(strMethods)
+
