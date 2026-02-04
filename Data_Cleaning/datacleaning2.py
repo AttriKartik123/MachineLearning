@@ -26,8 +26,3 @@ print("\n")
 print(df.columns.duplicated())
 
 
-### Attributes and Methods of Str
-print('\n')
-strMethods = dir(df.columns.str)
-print(strMethods)
-
