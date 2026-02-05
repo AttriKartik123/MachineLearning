@@ -53,5 +53,60 @@ print(columnNan)
 
 #for entire dataframe
 # For entire DataFrame
+print('\n')
 fullDataframe=df1.isnull().any().any()
 print(fullDataframe)
+
+# Columns with NAN using Integer
+print('\n')
+print(df1.isnull().sum())
+
+# Total Number of Missing NA
+print('\n')
+print(df1.isnull().sum().sum())
+
+
+
+#Adding A Default Value or Filling the Missing Data
+print('\n')
+print(df1.head())
+
+
+df_with_0 = df1.fillna(0)
+print(df_with_0.head(10))
+
+print('\n')
+print(df1['DURATION'].mean())
+
+
+#FILLING WITH MEAN 
+df_with_mean = df1.DURATION.fillna(df1['DURATION'].mean())
+print(df_with_mean)
+
+#Droping NA
+print('\n')
+print(df1.head(10))
+
+print('\n')
+print(df1.isnull().sum().sum())
+
+
+#shape
+print('\n')
+print(df1.shape)
+
+
+df_drop = df1.dropna()  
+print(df_drop)
+
+#print(?df.dropna())
+
+df_drop_with_condition = df1.dropna(thresh=4)
+print('\n')
+print("-------------------------------------------------------------------------")
+print(df1)
+print("-------------------------------------------------------------------------")
+print('\n')
+print(df_drop_with_condition)
+
+
