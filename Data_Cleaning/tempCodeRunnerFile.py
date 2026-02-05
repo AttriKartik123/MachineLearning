@@ -3,7 +3,7 @@ import numpy as np
 
 '''Task 1: Reading and Inspection'''
 
-data = pd.read_csv('Data_Cleaning/Melbourne.csv')
+data = pd.read_csv('Melbourne.csv')
 OrgData = data
 print(data)
 
@@ -56,4 +56,69 @@ print(data.isnull().all(axis=1).sum())
 
 
 #Summing up the missing values (column-wise) : Cal in %
-print("Length of data",len(data))
+print("Length of data :",len(data))    # down the rows
+
+colWise = data.isnull().sum(axis=0).sort_values(ascending=False)/len(data)*100  #This line calculates the percentage of missing values in each column.
+print(colWise)
+
+
+#Removing the three columns where the max null value percentage
+col = data.isnull().sum(axis=0).sort_values(ascending=False).head(3).index.values
+print(col)
+
+data = data.drop(col,axis='columns')
+
+print('\n')
+print(data.isnull().sum().sort_values(ascending=False)/len(data)*100)  #--->This recalculates and prints the percentage of missing values per column after removing those columns.
+
+
+
+#Check the rows where you have more then 5 missing Values
+print('\n')
+print(data[data.isnull().sum(axis=1) > 5])
+
+print('\n')
+print(data[data.isnull().sum(axis=1) > 5].shape)
+
+
+#Calculte the percentage
+print(len(data[data.isnull().sum(axis=1) > 5])/len(data)*100)
+
+#round off the percentage
+print('\n')
+round(len(data[data.isnull().sum(axis=1) > 5])/len(data)*100,2)
+
+
+#Retaining the rows having <=5 NaNs
+print('\n')
+data = data[data.isnull().sum(axis=1) <=5]
+print(data)
+
+
+print('\n')
+print(data.isnull().sum().sort_values(ascending=False)/len(data)*100)
+
+
+#Removing NAN Price rows
+data = data[data.Price.notnull()]
+print(data)
+
+
+
+#
+print('\n')
+print(round(data.isnull().sum().sort_values(ascending=False)/len(data)*100,2))
+
+#Still Landsize columns has 9.83% nan data, Now Describe the row
+print('\n')
+print(data['Landsize'].describe())
+
+
+
+print('\n')
+data = data[data.Landsize.notnull()]
+print(data)
+
+
+
+round(data.isnull().sum().sort_values(ascending=False)/len(data)*100,2)
