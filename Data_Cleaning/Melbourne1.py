@@ -63,4 +63,6 @@ print(colWise)
 
 
 #Removing the three columns where the max null value percentage
-col = data.isnull().sum(axis=0).sort_values(ascending=)
+col = data.isnull().sum(axis=0).sort_values(ascending=False).head(3).index.values
+print(col)
+
