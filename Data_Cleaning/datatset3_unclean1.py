@@ -21,6 +21,3 @@ df_drop_dup = df1.drop_duplicates('movie_title')
 print(df_drop_dup.shape)
 
 
-
-
-#DATAT TYPE INCONSISTENCY

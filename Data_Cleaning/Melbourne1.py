@@ -56,4 +56,11 @@ print(data.isnull().all(axis=1).sum())
 
 
 #Summing up the missing values (column-wise) : Cal in %
-print("Length of data",len(data))
+print("Length of data :",len(data))    # down the rows
+
+colWise = data.isnull().sum(axis=0).sort_values(ascending=False)/len(data)*100  #This line calculates the percentage of missing values in each column.
+print(colWise)
+
+
+#Removing the three columns where the max null value percentage
+col = data.isnull().sum(axis=0).sort_values(ascending=)
