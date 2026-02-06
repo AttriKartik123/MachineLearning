@@ -122,3 +122,13 @@ print(data)
 
 #This prints the percentage of missing values per column, rounded to 2 decimal places, after removing the NaN rows.
 print(round(data.isnull().sum().sort_values(ascending=False)/len(data)*100,2))
+
+######Describe Lattitude and Longtitude and later Imputing Lattitude and Longtitude by Mean Values
+print('\n')
+summary = data.loc[:,['Lattitude','Longtitude']].describe()
+print(summary)
+
+#
+print('\n')
+print(data['Lattitude'].mean())
+
