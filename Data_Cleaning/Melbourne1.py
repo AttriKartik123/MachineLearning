@@ -159,3 +159,19 @@ print(data.isnull().sum().sort_values(ascending=False))
 #Now check for Bathroom
 print('\n')
 print(data['Bathroom'].astype('category').value_counts())
+
+
+print(data.loc[:,'Bathroom'].fillna(1,inplace=True))
+
+
+#
+print('\n')
+print(round(data.isnull().sum().sort_values(ascending=False)/len(data)*100,2))
+
+#Check No of Row Retain
+#
+print('\n')
+print(len(data)/len(OrgData)*100)
+
+
+print(data)
