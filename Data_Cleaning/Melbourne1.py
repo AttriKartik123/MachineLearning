@@ -132,3 +132,30 @@ print(summary)
 print('\n')
 print(data['Lattitude'].mean())
 
+data.loc[:,'Longtitude'].fillna(data['Longtitude'].mean(),inplace=True)
+
+
+print('\n')
+print(round(data.isnull().sum().sort_values(ascending=False)/len(data)*100,2))
+
+#Now Still we are left with Bathroom and Car Parking
+print('\n')
+print(data.loc[:,['Bathroom','Car']].describe())
+
+
+# way to count using category method
+print('\n')
+print(data['Car'].astype('category').value_counts())
+
+
+print('\n')
+print(data.loc[:,'Car'].fillna(2,inplace=True)) 
+
+
+
+print(data.isnull().sum().sort_values(ascending=False))
+
+
+#Now check for Bathroom
+print('\n')
+print(data['Bathroom'].astype('category').value_counts())

@@ -120,5 +120,41 @@ data = data[data.Landsize.notnull()]
 print(data)
 
 
+#This prints the percentage of missing values per column, rounded to 2 decimal places, after removing the NaN rows.
+print(round(data.isnull().sum().sort_values(ascending=False)/len(data)*100,2))
 
-round(data.isnull().sum().sort_values(ascending=False)/len(data)*100,2)
+######Describe Lattitude and Longtitude and later Imputing Lattitude and Longtitude by Mean Values
+print('\n')
+summary = data.loc[:,['Lattitude','Longtitude']].describe()
+print(summary)
+
+#
+print('\n')
+print(data['Lattitude'].mean())
+
+data.loc[:,'Longtitude'].fillna(data['Longtitude'].mean(),inplace=True)
+
+
+print('\n')
+print(round(data.isnull().sum().sort_values(ascending=False)/len(data)*100,2))
+
+#Now Still we are left with Bathroom and Car Parking
+print('\n')
+print(data.loc[:,['Bathroom','Car']].describe())
+
+
+# way to count using category method
+print('\n')
+print(data['Car'].astype('category').value_counts())
+
+
+print('\n')
+print(data.loc[:,'Car'].fillna(2,inplace=True)) 
+
+
+
+print(data.isnull().sum().sort_values(ascending=False))
+
+
+#Now check for Bathroom
+print(data['Bathroom'].astype('category').value_counts())
