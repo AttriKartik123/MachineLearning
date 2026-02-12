@@ -1,5 +1,8 @@
 import pandas as pd 
 df = pd.read_csv("Data_Cleaning/Bets.csv")
+print("\n")
+print(len(df))
+print(df.shape)
 
 #print(df.head(10))
 
@@ -27,3 +30,40 @@ df = df.drop(columns=["created_at"])
 
 print("\n")
 print(df.head())
+
+    
+# now handling missing values 
+#option a :Check for nulls: print(df.isnull().sum())
+print("\n")
+print(df.isnull().sum())
+
+print("\n")
+print(df.head())
+
+# 5. HANDLING MISSING VALUES (Nulls)
+# Since your check showed 0 nulls, this is "safety" code.
+# For money columns, we fill empty cells with 0.0
+print("\n")
+df["turnover"] = df["turnover"].fillna(0.0)
+print(df.head())
+
+
+print("\n")
+print(len(df))
+print(df.shape)
+
+
+#  FINAL POLISH :
+# After dropping duplicates, the row index will have gaps (e.g., 1, 2, 4, 5).
+# This resets it to be continuous (0, 1, 2, 3).
+df = df.reset_index(drop=True)
+
+
+print("--- CLEANING COMPLETE ---")
+print(df.head())
+
+
+
+#final
+df.to_csv("Data_Cleaning/Bets_Cleaned.csv" , index = False)
+print('File is saved and cleaned successfully ')
