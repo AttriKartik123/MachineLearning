@@ -30,3 +30,8 @@ df = df[df['usd_value']>0]
 
 
 #Final polish 
+#resetting the index 
+df = df.reset_index(drop=True)
+df.to_csv("Transactions_Cleaned.csv", index=False)
+
+print("--- Transactions Cleaning Complete ---")
