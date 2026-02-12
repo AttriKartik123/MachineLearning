@@ -9,7 +9,7 @@ print(df.head())
 print("\n")
 
 # Converting column names to Series
-colToSeries = df.columns.to_series()
+colToSeries = df.columns.to_series() 
 print(colToSeries)
 print("\n")
 
