@@ -35,3 +35,5 @@ df = df.reset_index(drop=True)
 df.to_csv("Transactions_Cleaned.csv", index=False)
 
 print("--- Transactions Cleaning Complete ---")
+
+print(df.head())
