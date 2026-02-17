@@ -5,7 +5,12 @@ import numpy as np
 x = np.array([0, 1, 2, 3])
 y = np.array([3, 8, 1, 10])
 
-plt.subplot(1, 2, 1)
+plt.subplot(1, 2, 1)   # 1 row 2 columns and activate first area
+'''+-----------+-----------+
+|           |           |
+|   Area 1  |   Area 2  |
+|           |           |
++-----------+-----------+'''
 plt.plot(x,y)
 
 #plot 2:
@@ -16,3 +21,5 @@ plt.subplot(1, 2, 2)
 plt.plot(x,y)
 
 plt.show()
+
+

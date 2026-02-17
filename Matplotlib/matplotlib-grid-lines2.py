@@ -10,6 +10,6 @@ plt.ylabel("Calorie Burnage")
 
 plt.plot(x, y)
 
-plt.grid(axis = 'x')
+plt.grid(axis = 'y')
 
 plt.show()
