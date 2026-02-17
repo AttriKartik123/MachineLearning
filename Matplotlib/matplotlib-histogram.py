@@ -5,7 +5,7 @@
 import matplotlib.pyplot as plt
 import numpy as np
 
-x = np.random.normal(170, 10, 250)
+x = np.random.normal(170, 10, 250)  #“Create 250 random numbers that are centered around 170, and usually vary by about 10.”
 
 plt.hist(x)
 plt.show() 
