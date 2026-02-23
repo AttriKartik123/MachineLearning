@@ -8,8 +8,7 @@ path2 = 'img\input2.jpg'
 
 img1 = cv2.imread(path1)
 img2 = cv2.imread(path2)
-
-# SAFETY CHECK: Stop the script if images aren't found
+4
 if img1 is None or img2 is None:
     print(f"ERROR: Could not find images!")
     print(f"Current Working Directory: {os.getcwd()}")
