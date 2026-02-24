@@ -47,3 +47,34 @@ st.latex(r'''
 st.html(
     "<p><span style='text-decoration: line-through double red;'>Oops</span>!</p>"
 )
+
+
+#widgets
+#1 button
+import streamlit as st
+
+st.button("Reset", type="primary")
+if st.button("Say hello"):
+    st.write("Why hello there")
+else:
+    st.write("Goodbye")
+
+
+
+#download button
+
+message = st.text_area("Message", value="Lorem ipsum.\nStreamlit is cool.")
+
+if st.button("Prepare download"):
+    st.download_button(
+        label="Download text",
+        data=message,
+        file_name="message.txt",
+        on_click="ignore",
+        type="primary",
+        icon=":material/download:",
+    )
+
+
+
+    
