@@ -30,3 +30,20 @@ st.badge("Home", color="blue")
 
 st.caption("This is a string that explains something above.")
 st.caption("A caption with _italics_ :blue[colors] and emojis :sunglasses:")
+
+
+code = '''def hello():
+    print("Hello, Streamlit!")'''
+st.code(code, language="python")
+
+
+st.divider()
+
+st.latex(r'''
+    a + ar + a r^2 + a r^3 + \cdots + a r^{n-1} =
+    \sum_{k=0}^{n-1} ar^k =
+    a \left(\frac{1-r^{n}}{1-r}\right)
+    ''')
+st.html(
+    "<p><span style='text-decoration: line-through double red;'>Oops</span>!</p>"
+)
