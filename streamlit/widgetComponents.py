@@ -33,4 +33,24 @@ st.divider()
 
 
 st.download_button("Download btn" , data=" lorem ipsum")
+st.divider()
+
+
+
+#st.help("print")
+st.divider()
+
+
+
+#image
+# st.image(abc.png ,format= "img/png")
+
+st.snow()
+
+
+#latex
+st.latex("a^3 + b^6")
+
+
+st.slider("slide it:")
 
