@@ -42,10 +42,11 @@ if submitted:
     '''
 
 
-    
+
+
 import streamlit as st
 
-st.title("Registration Form")
+st.title("Registration Form" , text_alignment="center")
 
 with st.form("registration_form"):
 
@@ -70,7 +71,7 @@ with st.form("registration_form"):
     c9.text("Correspondence")
 
     c11, c12 = st.columns([1, 3])
-    mobileNumber = c12.text_input("Mobile Number:", label_visibility="collapsed")
+    mobileNumber = c12.text_input("Mobile Number:", label_visibility="collapsed" )
     c11.text("Mobile Number")
 
     c13, c14 = st.columns([1, 3])
@@ -78,8 +79,11 @@ with st.form("registration_form"):
     c13.text("Pincode")
 
     c15, c16 = st.columns([1, 3])
-
-    Interests = c16.multiselect("Interests",("Singing", "Dancing", "Drawing", "Bathing") , label_visibility="collapsed")
+    Interests = c16.multiselect(
+        "Interests",
+        ("Singing", "Dancing", "Drawing", "Bathing"),
+        label_visibility="collapsed"
+    )
     c15.text("Interests")
 
     c17, c18 = st.columns([1, 3])
@@ -89,12 +93,22 @@ with st.form("registration_form"):
     submitted = st.form_submit_button("Submit")
 
 if submitted:
-    st.success("Form Submitted Successfully!")
-    st.write("Submitted Details")
-    st.write("Username:", username)
-    st.write("Gender:", gender)
-    st.write("Correspondence:", correspondance)
-    st.write("Mobile Number:", mobileNumber)
-    st.write("Pincode:", PinCode)
-    st.write("Interests:", ", ".join(Interests))
-    st.write("Date of Birth:", dob)
+    if password != repassword:
+        st.error("Password mismatch")
+    elif password == "":
+        st.error("Password mismatch")
+    elif username == "":
+        st.error("Enter Username")
+    elif mobileNumber == "":
+        st.error("Enter mobile number")
+    
+    else:
+        st.success("Form Submitted Successfully!")
+        st.write("Submitted Details")
+        st.write("Username:", username)
+        st.write("Gender:", gender)
+        st.write("Correspondence:", correspondance)
+        st.write("Mobile Number:", mobileNumber)
+        st.write("Pincode:", PinCode)
+        st.write("Interests:", ", ".join(Interests))
+        st.write("Date of Birth:", dob)
