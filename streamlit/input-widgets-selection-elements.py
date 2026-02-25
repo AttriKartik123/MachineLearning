@@ -187,3 +187,12 @@ option = st.selectbox(
 )
 
 st.write("You selected:", option)
+
+
+
+#toggle 
+
+on = st.toggle("Activate feature")
+
+if on:
+    st.write("Feature activated!")
