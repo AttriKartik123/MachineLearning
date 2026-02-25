@@ -66,3 +66,13 @@ uploaded_files = st.file_uploader(
 for uploaded_file in uploaded_files:
     df = pd.read_csv(uploaded_file)
     st.write(df)
+
+
+#camera-Input
+import streamlit as st
+
+enable = st.checkbox("Enable camera")
+picture = st.camera_input("Take a picture", disabled=not enable)
+
+if picture:
+    st.image(picture)
