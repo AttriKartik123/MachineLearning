@@ -40,6 +40,9 @@ if submitted:
     st.write("Date of Birth:", dob)
 
     '''
+
+
+    
 import streamlit as st
 
 st.title("Registration Form")
@@ -75,8 +78,8 @@ with st.form("registration_form"):
     c13.text("Pincode")
 
     c15, c16 = st.columns([1, 3])
-    options = ["Singing", "Dancing", "Drawing", "Bathing"]
-    Interests = c16.pills("Interests", options, selection_mode="multi", label_visibility="collapsed")
+
+    Interests = c16.multiselect("Interests",("Singing", "Dancing", "Drawing", "Bathing") , label_visibility="collapsed")
     c15.text("Interests")
 
     c17, c18 = st.columns([1, 3])
