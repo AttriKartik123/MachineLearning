@@ -114,3 +114,76 @@ st.write(
     "Your selected option: "
     f"{None if selection is None else option_map[selection]}"
 )
+
+
+
+#slider--------------------
+
+
+color = st.select_slider(
+    "Select a color of the rainbow",
+    options=[
+        "red",
+        "orange",
+        "yellow",
+        "green",
+        "blue",
+        "indigo",
+        "violet",
+    ],
+)
+st.write("My favorite color is", color)
+
+#another eg 
+
+start_color, end_color = st.select_slider(
+    "Select a range of color wavelength",
+    options=[
+        "red",
+        "orange",
+        "yellow",
+        "green",
+        "blue",
+        "indigo",
+        "violet",
+    ],
+    value=("red", "blue"),
+)
+st.write("You selected wavelengths between", start_color, "and", end_color)
+
+
+
+#select box
+
+option = st.selectbox(
+    "How would you like to be contacted?",
+    ("Email", "Home phone", "Mobile phone"),
+)
+
+st.write("You selected:", option)
+
+#Example 2: Use a selectbox widget with no initial selection
+
+
+option = st.selectbox(
+    "How would you like to be contacted?",
+    ("Email", "Home phone", "Mobile phone"),
+    index=None,
+    placeholder="Select contact method...",
+)
+
+st.write("You selected:", option)
+
+
+#Let users add a new option
+import streamlit as st
+
+option = st.selectbox(
+    "Default email",
+    ["foo@example.com", "bar@example.com", "baz@example.com"],
+    index=None,
+    placeholder="Select a saved email or enter a new one",
+    accept_new_options=True,
+)
+
+st.write("You selected:", option)
