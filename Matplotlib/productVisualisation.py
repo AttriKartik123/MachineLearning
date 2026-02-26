@@ -31,8 +31,7 @@ df = pd.DataFrame(d)
 # 2. Plot
 plt.plot(df["Pname"], df["Prate"], marker='o')
 
-# 3. Add numbers above markers
 for x, y in zip(df["Pname"], df["Prate"]):
-    plt.text(x, y + 5, y, ha='center')
+    plt.text(x ,y+5 , y )   # x-x cordinate , y+5 - specify the location vertically  , y- Prate (which we have to plot)    
 
 plt.show()
