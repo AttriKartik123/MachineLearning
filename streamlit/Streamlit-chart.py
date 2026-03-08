@@ -5,11 +5,9 @@ import streamlit as st
 import pandas as pd
 import numpy as np
 
-
 st.title("Line Chart Example")
 
 st.write("This example shows how to create a simple line chart in Streamlit using random data.")
-
 
 data = pd.DataFrame(
     np.random.randn(20, 3),
@@ -21,9 +19,6 @@ st.write(data)
 
 st.subheader("Line Chart")
 st.line_chart(data)
-
-
-
 
 #------------------------------------------------->
 
@@ -38,12 +33,8 @@ df = df.set_index("Day")
 
 st.line_chart(df)
 
-
-
-
 #---------------------------------------------------------------------------->
 #BAR CHART
-
 
 st.divider()
 st.title("Bar Chart example 1")
@@ -59,3 +50,28 @@ data = pd.DataFrame({
 data = data.set_index("Product")
 
 st.bar_chart(data)
+
+#------------------------------------------------------------>
+st.divider()
+st.title("Area chart example")
+
+data = pd.DataFrame(
+    np.random.randn(20, 3),
+    columns=["A", "B", "C"]
+)
+
+st.area_chart(data)
+
+#------------------------------------------------------------------->
+st.divider()
+st.title("Area chart example2")
+
+data = {
+    "Day": ["Mon", "Tue", "Wed", "Thu", "Fri"],
+    "Visitors": [200, 300, 250, 400, 350]
+}
+
+df = pd.DataFrame(data)
+df = df.set_index("Day")
+
+st.area_chart(df)
