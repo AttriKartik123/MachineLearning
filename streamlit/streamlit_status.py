@@ -14,3 +14,18 @@ with st.status("Downloading data...", expanded=True) as status:
     )
 
 st.button("Rerun")
+
+
+#manual status control 
+
+
+status = st.status("Starting process...")
+
+time.sleep(2)
+status.write("Downloading data...")
+
+time.sleep(2)
+status.write("Processing data...")
+
+time.sleep(2)
+status.update(label="Process completed", state="complete")
