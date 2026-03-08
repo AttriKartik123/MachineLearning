@@ -18,3 +18,12 @@ data = pd.DataFrame({
 })
 
 st.map(data)
+
+
+
+
+'''DataFrame with lat + lon
+        ↓
+     st.map()
+        ↓
+   Points on map'''
