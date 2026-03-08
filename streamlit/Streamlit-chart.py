@@ -74,4 +74,4 @@ data = {
 df = pd.DataFrame(data)
 df = df.set_index("Day")
 
-st.area_chart(df)
+st.area_chart(df)    
