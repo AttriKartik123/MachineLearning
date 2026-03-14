@@ -1,5 +1,6 @@
 import pandas as pd
 from CustomLinearRegression import MyLinearRegression
+from customR import get_accuracy
 import numpy as np
 
 df = pd.read_csv("Pepsi.csv")
@@ -21,3 +22,12 @@ future_df = pd.DataFrame({'Year': new_x,'Actual_Price': np.nan,'Predicted_Price'
 
 df = pd.concat([df, future_df], ignore_index=True)
 print(df.head(15))
+
+
+accuracy = get_accuracy(x, y, model)
+
+print(f"Model Accuracy (R²): {accuracy:.4f}")
+if accuracy > 0.90:
+    print("The model is highly accurate!")
+else:
+    print("The model might need more data or a different approach.")
