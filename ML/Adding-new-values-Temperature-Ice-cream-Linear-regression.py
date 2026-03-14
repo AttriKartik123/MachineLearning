@@ -20,7 +20,7 @@ plt.legend()
 plt.show()
 
 
-newvalues=np.array([21,32,34,41,42,51]).reshape(-1, 1)
+newvalues=np.array([21,32,34,41,42,51]).reshape(-1, 1)  #Adding new values 
 predicted_sales = model.predict(newvalues)
 
 plt.scatter(temperature, sales, color='blue', label="Actual Sales")  
