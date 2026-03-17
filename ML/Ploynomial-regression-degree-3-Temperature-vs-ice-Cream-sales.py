@@ -8,7 +8,7 @@ sales = np.array([5, 20, 50, 80, 100, 90, 60])
 # Step 2: Create the polynomial feature matrix (Degree 3)
 A = np.vstack([np.ones_like(temperature), temperature, temperature**2, temperature**3]).T
 
-# Step 3: Solve for coefficients b0, b1, b2, b3
+# Step 3:linealgo is to Solve for coefficients b0, b1, b2, b3
 b0, b1, b2, b3 = np.linalg.lstsq(A, sales, rcond=None)[0]
 
 # Print the polynomial equation
