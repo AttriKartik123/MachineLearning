@@ -26,10 +26,6 @@ mean_absolute_error(y_train, y_predict_train)   #calcuating mean of them
 
 
 
-
-
-
-
 parameters = {'max_depth': [6, 7, 8, 9, 10, 12], 'max_leaf_nodes': [36, 40, 44, 48, 50, 52],
              'max_features': [10, 12, 14, 16, 18]}     #limit parameters for overfit prevention
 rg1 = DecisionTreeRegressor()   #empty regressor
