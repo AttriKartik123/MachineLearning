@@ -9,7 +9,7 @@ warnings.filterwarnings('ignore')
 
 # 1. Load dataset (using the relative path from your project root)
 try:
-    data = 'machine-learning/pulsar_stars.csv'
+    data = 'ML/pulsar_stars.csv'
     df = pd.read_csv(data)
 except FileNotFoundError:
     data = 'pulsar_stars.csv'  # Fallback if run from inside the folder
