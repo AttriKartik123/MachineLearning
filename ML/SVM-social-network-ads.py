@@ -18,7 +18,7 @@ X_Train, X_Test, Y_Train, Y_Test = train_test_split(X, Y, test_size = 0.25, rand
 
 # Feature Scaling
 
-from sklearn.preprocessing import StandardScaler
+from sklearn.preprocessing import StandardScaler # for standardizing outlier values 
 sc_X = StandardScaler()
 X_Train = sc_X.fit_transform(X_Train)
 X_Test = sc_X.transform(X_Test)
