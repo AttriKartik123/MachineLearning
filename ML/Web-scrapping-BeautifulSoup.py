@@ -3,7 +3,6 @@ import requests
 from bs4 import BeautifulSoup
 import csv
 from pprint import pprint
-
 # 1. Use the updated domain
 url = 'https://www.ayush.nz/technology'
 headers = {
